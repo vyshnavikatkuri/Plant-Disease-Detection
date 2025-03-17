@@ -1,5 +1,6 @@
 # from flask import Flask, render_template, jsonify, request, Markup
 from flask import Flask, render_template, jsonify, request
+import os
 from markupsafe import Markup 
 from model import predict_image
 import utils
@@ -28,4 +29,5 @@ def predict():
 
 
 if __name__ == "__main__":
+    port = int(os.environ.get('PORT',10000))
     app.run(debug=True)
