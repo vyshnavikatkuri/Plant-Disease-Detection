@@ -1,2 +1,3 @@
-web: gunicorn Flask.app:app
+web: gunicorn -w 4 -b 0.0.0.0:$PORT FLASK.app:app
+
 
